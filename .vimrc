@@ -149,6 +149,8 @@ Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/github-complete.vim'
 Plug 'yianwillis/vimcdoc'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'vim-scripts/a.vim'
 
 call plug#end()            
 
@@ -352,3 +354,13 @@ nnoremap <leader>gg :GV?<cr>
 if filereadable(expand($HOME . '/.vimrc.local'))
     source $HOME/.vimrc.local
 endif
+
+"make
+set makeprg=scons\ -u\ .\ -j\ 8
+map<F4> :make<CR>
+
+"a.vim
+map<F2> :AV<CR>
+
+"witespace
+map <leader><space> :FixWhitespace<cr>
